@@ -13,6 +13,8 @@ class MigrationTest extends TestCase
         $this->assertEquals([
             'id',
             'expires_at',
+            'created_at',
+            'updated_at',
         ], Schema::getColumnListing('subscriptions'));
     }
 
