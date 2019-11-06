@@ -19,8 +19,6 @@ abstract class TestCase extends Orchestra
         //
     }
 
-
-
     /**
      * Get package providers.
      *
