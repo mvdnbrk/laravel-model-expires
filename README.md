@@ -17,6 +17,20 @@ composer require mvdnbrk/laravel-model-expires
 ```
 ## Usage
 
+```php
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Mvdnbrk\ModelExpires\Expires;
+
+class Subscription extends Model
+{
+    use Expires;
+}
+```
+
 You should add the `expires_at` column to your database table.  
 This packages contains a helper method to create this column:
 
@@ -27,6 +41,14 @@ Schema::table('subscriptions', function (Blueprint $table) {
 ```
 
 > You may drop the `expires_at` column with `$table->dropExpires()`.
+
+To determine if a given model instance has expired, use the `expired` method:
+
+```php
+if ($subscription->expired()) {
+    //
+}
+```
 
 ## Testing
 
