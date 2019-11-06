@@ -21,7 +21,7 @@ You should add the `expires_at` column to your database table.
 This packages contains a helper method to create this column:
 
 ```php
-Schema::table('subscription', function (Blueprint $table) {
+Schema::table('subscriptions', function (Blueprint $table) {
     $table->expires();
 });
 ```
