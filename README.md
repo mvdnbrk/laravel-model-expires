@@ -17,6 +17,17 @@ composer require mvdnbrk/laravel-model-expires
 ```
 ## Usage
 
+You should add the `expires_at` column to your database table.  
+This packages contains a helper method to create this column:
+
+```php
+Schema::table('subscription', function (Blueprint $table) {
+    $table->expires();
+});
+```
+
+> You may drop the `expires_at` column with `$table->dropExpires()`.
+
 ## Testing
 
 ``` bash
