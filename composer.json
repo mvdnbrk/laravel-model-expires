@@ -22,6 +22,7 @@
         "illuminate/support": "^5.8 || ^6.0"
     },
     "require-dev": {
+        "doctrine/dbal": "^2.10",
         "nunomaduro/collision": "^3.0",
         "orchestra/testbench": "^3.8 || ^4.0",
         "phpunit/phpunit": "^8.0",
