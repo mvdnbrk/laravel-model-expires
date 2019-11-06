@@ -4,6 +4,9 @@ namespace Mvdnbrk\ModelExpires;
 
 use Illuminate\Support\Carbon;
 
+/**
+ * @property array $dates
+ */
 trait Expires
 {
     /**
