@@ -7,6 +7,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\InteractsWithTime;
 
 /**
+ * @property array $attributes
  * @property array $dates
  */
 trait Expires
