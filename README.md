@@ -46,6 +46,8 @@ Schema::table('subscriptions', function (Blueprint $table) {
 
 The `Expires` trait will automatically cast the `expires_at` attribute to a `DateTime` / `Carbon` instance for you.
 
+### Setting expiration
+
 You may set the expiration of a model by setting the `expires_at` attribute with a TTL in seconds:
 
 ```php
@@ -58,13 +60,17 @@ Instead of passing the number of seconds as an integer, you may also pass a `Dat
 $subscription->expires_at = now()->addMinutes(10);
 ```
 
-You may remove the expiration date by providing a zero or negative TTL:
+### Removing expiration
+
+You may remove the expiration of a model by providing a zero or negative TTL:
 
 ```php
 $subscription->expires_at = 0;
 
 $subscription->expires_at = -5;
 ```
+
+### Determine expiration
 
 To determine if a given model instance has expired, use the `expired` method:
 
