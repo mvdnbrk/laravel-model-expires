@@ -25,11 +25,11 @@ To enable an expiration date for a model, use the `Mvdnbrk\ModelExpires\Expires`
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Mvdnbrk\ModelExpires\Expires;
+use Mvdnbrk\ModelExpires\Expirable;
 
 class Subscription extends Model
 {
-    use Expires;
+    use Expirable;
 }
 ```
 
@@ -44,7 +44,7 @@ Schema::table('subscriptions', function (Blueprint $table) {
 
 > You may drop the `expires_at` column with `$table->dropExpires()`.
 
-The `Expires` trait will automatically cast the `expires_at` attribute to a `DateTime` / `Carbon` instance for you.
+The `Expirable` trait will automatically cast the `expires_at` attribute to a `DateTime` / `Carbon` instance for you.
 
 ### Setting expiration
 
