@@ -10,7 +10,7 @@ use Illuminate\Support\InteractsWithTime;
  * @property array $attributes
  * @property array $dates
  */
-trait Expires
+trait Expirable
 {
     use InteractsWithTime;
 
@@ -19,7 +19,7 @@ trait Expires
      *
      * @return void
      */
-    public function initializeExpires()
+    public function initializeExpirable()
     {
         $this->dates[] = $this->getExpiresAtColumn();
     }

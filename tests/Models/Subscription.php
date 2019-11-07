@@ -3,11 +3,11 @@
 namespace Mvdnbrk\ModelExpires\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Mvdnbrk\ModelExpires\Expires;
+use Mvdnbrk\ModelExpires\Expirable;
 
 class Subscription extends Model
 {
-    use Expires;
+    use Expirable;
 
     protected $guarded = [];
 
