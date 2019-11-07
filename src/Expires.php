@@ -63,12 +63,12 @@ trait Expires
     /**
      * Calculate the number of seconds for the given TTL.
      *
-     * @param  \DateTimeInterface|\DateInterval|int  $ttl
+     * @param  \DateTimeInterface|\DateInterval|int|null  $ttl
      * @return int
      */
     protected function getSeconds($ttl)
     {
-        $duration = $this->parseDateInterval($ttl);
+        $duration = $ttl ? $this->parseDateInterval($ttl) : 0;
 
         if ($duration instanceof DateTimeInterface) {
             $duration = Carbon::now()->diffInRealSeconds($duration, false);
