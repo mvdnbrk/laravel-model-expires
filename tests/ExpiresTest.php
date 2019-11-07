@@ -2,7 +2,7 @@
 
 namespace Mvdnbrk\ModelExpires\Tests;
 
-use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Carbon;
 use Mvdnbrk\ModelExpires\Tests\Models\CustomSubscription;
 use Mvdnbrk\ModelExpires\Tests\Models\Subscription;
 
@@ -48,10 +48,10 @@ class ExpiresTest extends TestCase
         ]);
         $this->assertFalse($model->expired());
 
-        $model->expires_at = Date::now()->addMinute();
+        $model->expires_at = Carbon::now()->addMinute();
         $this->assertFalse($model->expired());
 
-        $model->expires_at = Date::now()->subMinute();
+        $model->expires_at = Carbon::now()->subMinute();
         $this->assertTrue($model->expired());
     }
 }
