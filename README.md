@@ -17,6 +17,8 @@ composer require mvdnbrk/laravel-model-expires
 ```
 ## Usage
 
+To enable an expiration date for a model, use the `Mvdnbrk\ModelExpires\Expires` trait on the model:
+
 ```php
 <?php
 
@@ -31,7 +33,7 @@ class Subscription extends Model
 }
 ```
 
-You should add the `expires_at` column to your database table.  
+You should add an `expires_at` column to your database table.  
 This packages contains a helper method to create this column:
 
 ```php
@@ -41,6 +43,28 @@ Schema::table('subscriptions', function (Blueprint $table) {
 ```
 
 > You may drop the `expires_at` column with `$table->dropExpires()`.
+
+The `Expires` trait will automatically cast the `expires_at` attribute to a `DateTime` / `Carbon` instance for you.
+
+You may set the expiration of a model by setting the `expires_at` attribute with a TTL in seconds:
+
+```php
+$subscription->expires_at = 600;
+```
+
+Instead of passing the number of seconds as an integer, you may also pass a `DateTime` instance representing the expiration date:
+
+```php
+$subscription->expires_at = now()->addMinutes(10);
+```
+
+You may remove the expiration date by providing a zero or negative TTL:
+
+```php
+$subscription->expires_at = 0;
+
+$subscription->expires_at = -5;
+```
 
 To determine if a given model instance has expired, use the `expired` method:
 
