@@ -2,13 +2,17 @@
 
 namespace Mvdnbrk\ModelExpires;
 
+use DateTimeInterface;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\InteractsWithTime;
 
 /**
  * @property array $dates
  */
 trait Expires
 {
+    use InteractsWithTime;
+
     /**
      * Initialize the expires trait for an instance.
      *
@@ -41,5 +45,35 @@ trait Expires
     public function getExpiresAtColumn()
     {
         return defined('static::EXPIRES_AT') ? static::EXPIRES_AT : 'expires_at';
+    }
+
+    /**
+     * Set the "expires at" column for an instance.
+     *
+     * @param  \DateTimeInterface|\DateInterval|int|null  $ttl
+     * @return void
+     */
+    public function setExpiresAtAttribute($ttl)
+    {
+        $seconds = $this->getSeconds($ttl);
+
+        $this->attributes[$this->getExpiresAtColumn()] = $seconds ? Carbon::now()->addSeconds($seconds) : null;
+    }
+
+    /**
+     * Calculate the number of seconds for the given TTL.
+     *
+     * @param  \DateTimeInterface|\DateInterval|int  $ttl
+     * @return int
+     */
+    protected function getSeconds($ttl)
+    {
+        $duration = $this->parseDateInterval($ttl);
+
+        if ($duration instanceof DateTimeInterface) {
+            $duration = Carbon::now()->diffInRealSeconds($duration, false);
+        }
+
+        return (int) $duration > 0 ? $duration : 0;
     }
 }
