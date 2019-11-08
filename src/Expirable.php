@@ -3,6 +3,7 @@
 namespace Mvdnbrk\ModelExpires;
 
 use DateTimeInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\InteractsWithTime;
 
@@ -76,5 +77,28 @@ trait Expirable
         }
 
         return (int) $duration > 0 ? $duration : 0;
+    }
+
+    /**
+     * Scope a query to only include expired models.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOnlyExpired(Builder $query)
+    {
+        return $query->where($this->getExpiresAtColumn(), '<=', $this->freshTimestamp());
+    }
+
+    /**
+     * Scope a query to only include expired models.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithoutExpired(Builder $query)
+    {
+        return $query->where($this->getExpiresAtColumn(), '>', $this->freshTimestamp())
+            ->orWhereNull($this->getExpiresAtColumn());
     }
 }
