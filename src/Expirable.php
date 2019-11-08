@@ -41,6 +41,18 @@ trait Expirable
     }
 
     /**
+     * Determine if the model instance will expire.
+     *
+     * @return bool
+     */
+    public function willExpire()
+    {
+        $expiresAt = $this->{$this->getExpiresAtColumn()};
+
+        return $expiresAt && $expiresAt->isFuture();
+    }
+
+    /**
      * Get the name of the "expires at" column.
      *
      * @return string
