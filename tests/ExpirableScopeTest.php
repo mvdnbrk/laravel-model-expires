@@ -20,6 +20,8 @@ class ExpirableScopeTest extends TestCase
     {
         parent::setUp();
 
+        $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
+
         Carbon::setTestNow('2019-01-01 12:34:56');
 
         $this->expired = Subscription::create([
