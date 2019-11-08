@@ -4,6 +4,12 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## [Unreleased]
 
+## [v1.4.0] - 2019-11-08
+
+### Changed
+- Changed namesppace to `Mvdnbrk\EloquentExpirable`. [`#14`](https://github.com/mvdnbrk/laravel-model-expires/pull/14)
+- Changed local scopes to a global `ExpiringScope`. [`#14`](https://github.com/mvdnbrk/laravel-model-expires/pull/13)
+
 ## [v1.3.0] - 2019-11-08
 
 ### Added
@@ -24,7 +30,8 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## v1.0.0 - 2019-11-07
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.4.0...HEAD
+[v1.4.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.3.0...v1.4.0
 [v1.3.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.0.0...v1.1.0
