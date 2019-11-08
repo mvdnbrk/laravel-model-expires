@@ -28,14 +28,17 @@ class MigrationTest extends TestCase
     /** @test */
     public function it_can_drop_the_expires_at_column()
     {
+        Schema::create('subscriptions', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->expires();
+        });
+
         Schema::table('subscriptions', function (Blueprint $table) {
             $table->dropExpires();
         });
 
         $this->assertEquals([
             'id',
-            'created_at',
-            'updated_at',
         ], Schema::getColumnListing('subscriptions'));
     }
 }
