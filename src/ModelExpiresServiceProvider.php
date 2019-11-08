@@ -42,7 +42,7 @@ class ModelExpiresServiceProvider extends ServiceProvider
 
             Blueprint::macro('dropExpires', function ($column = 'expires_at') {
                 /* @var \Illuminate\Database\Schema\Blueprint $this */
-                $this->dropSoftDeletes($column);
+                $this->dropColumn($column);
             });
         }
     }
