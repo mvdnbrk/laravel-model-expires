@@ -7,6 +7,13 @@ use Mvdnbrk\ModelExpires\Tests\TestCase;
 
 class MigrationTest extends TestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
+    }
+
     /** @test */
     public function it_runs_the_migrations()
     {
