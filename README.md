@@ -80,6 +80,14 @@ if ($subscription->expired()) {
 }
 ```
 
+To determine if a given model will expire in the future use the `willExpire` method:
+
+```php
+if ($subscription->willExpire()) {
+    //
+}
+```
+
 ### Querying expired models
 
 The `withoutExpired` method will retrieve models that are not expired:

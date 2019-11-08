@@ -88,6 +88,21 @@ class ExpirableTest extends TestCase
         Carbon::setTestNow(Carbon::now()->addDay());
         $this->assertTrue($model->expired());
     }
+
+    /** @test */
+    public function it_can_determine_if_it_will_expire()
+    {
+        $model = ModelStub::make([
+            'expires_at' => null,
+        ]);
+        $this->assertFalse($model->willExpire());
+
+        $model->expires_at = Carbon::now()->addMinute();
+        $this->assertTrue($model->willExpire());
+
+        Carbon::setTestNow(Carbon::now()->addDay());
+        $this->assertFalse($model->willExpire());
+    }
 }
 
 class ModelStub extends Model
