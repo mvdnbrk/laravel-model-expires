@@ -3,12 +3,10 @@
 namespace Mvdnbrk\ModelExpires;
 
 use DateTimeInterface;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\InteractsWithTime;
 
 /**
- * @method \Illuminate\Support\Carbon freshTimestamp()
  * @property array $attributes
  * @property array $dates
  */
