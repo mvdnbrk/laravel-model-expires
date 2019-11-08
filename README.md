@@ -70,7 +70,7 @@ $subscription->expires_at = 0;
 $subscription->expires_at = -5;
 ```
 
-### Determine expiration
+### Determining expiration
 
 To determine if a given model instance has expired, use the `expired` method:
 
@@ -88,7 +88,7 @@ if ($subscription->willExpire()) {
 }
 ```
 
-### Querying expired models
+### Querying models
 
 The `withoutExpired` method will retrieve models that are not expired:
 
