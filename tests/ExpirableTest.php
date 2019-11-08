@@ -2,16 +2,16 @@
 
 namespace Mvdnbrk\ModelExpires\Tests;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use Mvdnbrk\ModelExpires\Tests\Models\CustomSubscription;
-use Mvdnbrk\ModelExpires\Tests\Models\Subscription;
+use Mvdnbrk\ModelExpires\Expirable;
 
 class ExpirableTest extends TestCase
 {
     /** @test */
     public function it_has_a_expires_at_column_with_value_null()
     {
-        $model = Subscription::make();
+        $model = ModelStub::make();
 
         $this->assertNull($model->expires_at);
     }
@@ -19,7 +19,7 @@ class ExpirableTest extends TestCase
     /** @test */
     public function it_adds_the_expires_at_column_to_date_casts()
     {
-        $model = Subscription::make();
+        $model = ModelStub::make();
 
         $this->assertContains('expires_at', $model->getDates());
     }
@@ -27,7 +27,7 @@ class ExpirableTest extends TestCase
     /** @test */
     public function it_can_determine_the_expires_at_column()
     {
-        $model = Subscription::make();
+        $model = ModelStub::make();
 
         $this->assertEquals('expires_at', $model->getExpiresAtColumn());
     }
@@ -35,9 +35,9 @@ class ExpirableTest extends TestCase
     /** @test */
     public function it_can_customize_the_expires_at_column()
     {
-        $model = CustomSubscription::make();
+        $model = CustomModelStub::make();
 
-        $this->assertEquals('finishes_at', $model->getExpiresAtColumn());
+        $this->assertEquals('ends_at', $model->getExpiresAtColumn());
     }
 
     /** @test */
@@ -45,7 +45,7 @@ class ExpirableTest extends TestCase
     {
         Carbon::setTestNow('2019-11-11 11:11:11');
 
-        $model = Subscription::make([
+        $model = ModelStub::make([
             'expires_at' => Carbon::now()->addYear(),
          ]);
 
@@ -57,7 +57,7 @@ class ExpirableTest extends TestCase
     {
         Carbon::setTestNow('2019-11-11 11:11:11');
 
-        $model = Subscription::make([
+        $model = ModelStub::make([
             'expires_at' => 60,
          ]);
 
@@ -67,7 +67,7 @@ class ExpirableTest extends TestCase
     /** @test */
     public function it_unsets_the_expires_at_column_with_a_date_in_the_past()
     {
-        $model = Subscription::make([
+        $model = ModelStub::make([
             'expires_at' => Carbon::now()->subMinute(),
          ]);
 
@@ -77,7 +77,7 @@ class ExpirableTest extends TestCase
     /** @test */
     public function it_can_determine_if_it_has_expired()
     {
-        $model = Subscription::make([
+        $model = ModelStub::make([
             'expires_at' => null,
         ]);
         $this->assertFalse($model->expired());
@@ -88,4 +88,16 @@ class ExpirableTest extends TestCase
         Carbon::setTestNow(Carbon::now()->addDay());
         $this->assertTrue($model->expired());
     }
+}
+
+class ModelStub extends Model
+{
+    use Expirable;
+
+    protected $guarded = [];
+}
+
+class CustomModelStub extends ModelStub
+{
+    const EXPIRES_AT = 'ends_at';
 }

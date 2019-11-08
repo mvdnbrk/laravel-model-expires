@@ -12,4 +12,6 @@ class Subscription extends Model
     protected $guarded = [];
 
     protected $table = 'subscriptions';
+
+    public $timestamps = false;
 }
