@@ -102,6 +102,18 @@ The `onlyExpired` method will retrieve **only** the expired models:
 $subscriptions = App\Subscription::onlyExpired()->get();
 ```
 
+The `expiring` method will retrieve **only** models that will expire in the future:
+
+```php
+$subscriptions = App\Subscription::expiring()->get();
+```
+
+The `notExpiring` method will retrieve **only** models that will never expire:
+
+```php
+$subscriptions = App\Subscription::expiring()->get();
+```
+
 ## Testing
 
 ``` bash
