@@ -1,6 +1,6 @@
 <?php
 
-namespace Mvdnbrk\ModelExpires;
+namespace Mvdnbrk\EloquentExpirable;
 
 use DateTimeInterface;
 use Illuminate\Support\Carbon;

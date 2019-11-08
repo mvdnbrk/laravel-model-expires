@@ -1,19 +1,19 @@
 <?php
 
-namespace Mvdnbrk\ModelExpires\Tests;
+namespace Mvdnbrk\EloquentExpirable\Tests;
 
 use Illuminate\Support\Carbon;
-use Mvdnbrk\ModelExpires\Tests\Models\Subscription;
+use Mvdnbrk\EloquentExpirable\Tests\Models\Subscription;
 
 class ExpirableScopeTest extends TestCase
 {
-    /* @var \Mvdnbrk\ModelExpires\Tests\Models\Subscription */
+    /* @var \Mvdnbrk\EloquentExpirable\Tests\Models\Subscription */
     protected $expired;
 
-    /* @var \Mvdnbrk\ModelExpires\Tests\Models\Subscription */
+    /* @var \Mvdnbrk\EloquentExpirable\Tests\Models\Subscription */
     protected $expiresInFuture;
 
-    /* @var \Mvdnbrk\ModelExpires\Tests\Models\Subscription */
+    /* @var \Mvdnbrk\EloquentExpirable\Tests\Models\Subscription */
     protected $expiresNever;
 
     protected function setUp(): void

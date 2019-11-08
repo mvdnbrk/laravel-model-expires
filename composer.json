@@ -35,18 +35,18 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mvdnbrk\\ModelExpires\\ModelExpiresServiceProvider"
+                "Mvdnbrk\\EloquentExpirable\\ExpirableServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Mvdnbrk\\ModelExpires\\": "src"
+            "Mvdnbrk\\EloquentExpirable\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mvdnbrk\\ModelExpires\\Tests\\": "tests"
+            "Mvdnbrk\\EloquentExpirable\\Tests\\": "tests"
         }
     },
     "scripts": {

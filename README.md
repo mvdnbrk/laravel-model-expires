@@ -17,7 +17,7 @@ composer require mvdnbrk/laravel-model-expires
 ```
 ## Usage
 
-To enable an expiration date for a model, use the `Mvdnbrk\ModelExpires\Expires` trait on the model:
+To enable an expiration date for a model, use the `Mvdnbrk\EloquentExpirable\Expires` trait on the model:
 
 ```php
 <?php
@@ -25,7 +25,7 @@ To enable an expiration date for a model, use the `Mvdnbrk\ModelExpires\Expires`
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Mvdnbrk\ModelExpires\Expirable;
+use Mvdnbrk\EloquentExpirable\Expirable;
 
 class Subscription extends Model
 {
