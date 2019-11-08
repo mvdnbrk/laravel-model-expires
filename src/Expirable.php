@@ -102,6 +102,29 @@ trait Expirable
     }
 
     /**
+     * Scope a query to only include models expiring in the future.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeExpiring(Builder $query)
+    {
+        return $query->whereNotNull($this->getExpiresAtColumn())
+            ->where($this->getExpiresAtColumn(), '>', $this->freshTimestamp());
+    }
+
+    /**
+     * Scope a query to only include models expiring in the future.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeNotExpiring(Builder $query)
+    {
+        return $query->whereNull($this->getExpiresAtColumn());
+    }
+
+    /**
      * Scope a query to only include expired models.
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query
