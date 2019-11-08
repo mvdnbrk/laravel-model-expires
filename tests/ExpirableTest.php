@@ -6,7 +6,7 @@ use Illuminate\Support\Carbon;
 use Mvdnbrk\ModelExpires\Tests\Models\CustomSubscription;
 use Mvdnbrk\ModelExpires\Tests\Models\Subscription;
 
-class ExpiresTest extends TestCase
+class ExpirableTest extends TestCase
 {
     /** @test */
     public function it_has_a_expires_at_column_with_value_null()
