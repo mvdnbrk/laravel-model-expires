@@ -4,6 +4,8 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## [Unreleased]
 
+## [v1.3.0] - 2019-11-08
+
 ### Added
 - Added `willExpire` method. [`#10`](https://github.com/mvdnbrk/laravel-model-expires/pull/10)
 - Added `expiring` query scope. [`#11`](https://github.com/mvdnbrk/laravel-model-expires/pull/11)
@@ -22,6 +24,7 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## v1.0.0 - 2019-11-07
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.3.0...HEAD
+[v1.3.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.0.0...v1.1.0
