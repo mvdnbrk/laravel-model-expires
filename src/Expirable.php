@@ -61,6 +61,16 @@ trait Expirable
     }
 
     /**
+     * Get the fully qualified "expires at" column.
+     *
+     * @return string
+     */
+    public function getQualifiedExpiresAtColumn()
+    {
+        return $this->qualifyColumn($this->getExpiresAtColumn());
+    }
+
+    /**
      * Set the "expires at" column for an instance.
      *
      * @param  \DateTimeInterface|\DateInterval|int|null  $ttl

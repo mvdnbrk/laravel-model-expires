@@ -41,6 +41,18 @@ class ExpirableTest extends TestCase
     }
 
     /** @test */
+    public function it_can_determine_qualified_expires_at_column_column()
+    {
+        $model = ModelStub::make();
+
+        $this->assertEquals('model_table.expires_at', $model->getQualifiedExpiresAtColumn());
+
+        $model = CustomModelStub::make();
+
+        $this->assertEquals('model_table.ends_at', $model->getQualifiedExpiresAtColumn());
+    }
+
+    /** @test */
     public function it_can_set_the_expires_at_column()
     {
         Carbon::setTestNow('2019-11-11 11:11:11');
@@ -108,6 +120,8 @@ class ExpirableTest extends TestCase
 class ModelStub extends Model
 {
     use Expirable;
+
+    protected $table = 'model_table';
 
     protected $guarded = [];
 }
