@@ -80,6 +80,20 @@ if ($subscription->expired()) {
 }
 ```
 
+### Querying expired models
+
+The `withoutExpired` method will retrieve models that are not expired:
+
+```php
+$subscriptions = App\Subscription::withoutExpired()->get();
+```
+
+The `onlyExpired` method will retrieve **only** the expired models:
+
+```php
+$subscriptions = App\Subscription::onlyExpired()->get();
+```
+
 ## Testing
 
 ``` bash
