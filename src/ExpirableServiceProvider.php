@@ -1,11 +1,11 @@
 <?php
 
-namespace Mvdnbrk\ModelExpires;
+namespace Mvdnbrk\EloquentExpirable;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\ServiceProvider;
 
-class ModelExpiresServiceProvider extends ServiceProvider
+class ExpirableServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

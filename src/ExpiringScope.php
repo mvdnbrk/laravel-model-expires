@@ -1,6 +1,6 @@
 <?php
 
-namespace Mvdnbrk\ModelExpires;
+namespace Mvdnbrk\EloquentExpirable;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

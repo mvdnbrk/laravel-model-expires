@@ -1,10 +1,10 @@
 <?php
 
-namespace Mvdnbrk\ModelExpires\Tests;
+namespace Mvdnbrk\EloquentExpirable\Tests;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use Mvdnbrk\ModelExpires\Expirable;
+use Mvdnbrk\EloquentExpirable\Expirable;
 
 class ExpirableTest extends TestCase
 {
