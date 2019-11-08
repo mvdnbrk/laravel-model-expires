@@ -3,12 +3,10 @@
 namespace Mvdnbrk\ModelExpires;
 
 use DateTimeInterface;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\InteractsWithTime;
 
 /**
- * @method \Illuminate\Support\Carbon freshTimestamp()
  * @property array $attributes
  * @property array $dates
  */
@@ -17,7 +15,17 @@ trait Expirable
     use InteractsWithTime;
 
     /**
-     * Initialize the expires trait for an instance.
+     * Boot the expirable trait for a model.
+     *
+     * @return void
+     */
+    public static function bootExpirable()
+    {
+        static::addGlobalScope(new ExpiringScope);
+    }
+
+    /**
+     * Initialize the expirable trait for an instance.
      *
      * @return void
      */
@@ -61,54 +69,6 @@ trait Expirable
         $expiresAt = $this->{$this->getExpiresAtColumn()};
 
         return $expiresAt && $expiresAt->isFuture();
-    }
-
-    /**
-     * Scope a query to only include expired models.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeOnlyExpired(Builder $query)
-    {
-        return $query->where($this->getQualifiedExpiresAtColumn(), '<=', $this->freshTimestamp());
-    }
-
-    /**
-     * Scope a query to only include models expiring in the future.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeExpiring(Builder $query)
-    {
-        $column = $this->getQualifiedExpiresAtColumn();
-
-        return $query->whereNotNull($column)->where($column, '>', $this->freshTimestamp());
-    }
-
-    /**
-     * Scope a query to only include models expiring in the future.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeNotExpiring(Builder $query)
-    {
-        return $query->whereNull($this->getQualifiedExpiresAtColumn());
-    }
-
-    /**
-     * Scope a query to only include expired models.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeWithoutExpired(Builder $query)
-    {
-        $column = $this->getQualifiedExpiresAtColumn();
-
-        return $query->where($column, '>', $this->freshTimestamp())->orWhereNull($column);
     }
 
     /**
