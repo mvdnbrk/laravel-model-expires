@@ -80,7 +80,7 @@ if ($subscription->expired()) {
 }
 ```
 
-### Retrieving only expired models
+### Querying expired models
 
 The `withoutExpired` method will retrieve models that are not expired:
 
