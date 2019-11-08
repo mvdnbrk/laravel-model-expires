@@ -2,25 +2,31 @@
 
 namespace Mvdnbrk\ModelExpires\Tests\Database;
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Mvdnbrk\ModelExpires\Tests\TestCase;
 
 class MigrationTest extends TestCase
 {
     /** @test */
-    public function it_runs_the_migrations()
+    public function it_can_add_the_expires_at_column()
     {
-        $this->assertEquals([
-            'id',
-            'expires_at',
-            'created_at',
-            'updated_at',
-        ], Schema::getColumnListing('subscriptions'));
+        Schema::create('subscriptions', function (Blueprint $table) {
+            $table->expires();
+        });
+
+        $this->assertEquals('datetime', Schema::getColumnType('subscriptions', 'expires_at'));
     }
 
     /** @test */
-    public function it_has_the_correct_column_type()
+    public function it_can_add_the_expires_at_column_with_a_custom_name()
     {
-        $this->assertEquals('datetime', Schema::getColumnType('subscriptions', 'expires_at'));
+        Schema::create('subscriptions', function (Blueprint $table) {
+            $table->expires('finishes_at');
+        });
+
+        $this->assertEquals([
+            'finishes_at',
+        ], Schema::getColumnListing('subscriptions'));
     }
 }

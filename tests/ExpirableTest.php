@@ -11,9 +11,9 @@ class ExpirableTest extends TestCase
     /** @test */
     public function it_has_a_expires_at_column_with_value_null()
     {
-        $model = Subscription::create();
+        $model = Subscription::make();
 
-        $this->assertNull($model->fresh()->expires_at);
+        $this->assertNull($model->expires_at);
     }
 
     /** @test */
