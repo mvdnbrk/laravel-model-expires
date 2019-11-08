@@ -111,7 +111,7 @@ $subscriptions = App\Subscription::expiring()->get();
 The `notExpiring` method will retrieve **only** models that will never expire:
 
 ```php
-$subscriptions = App\Subscription::expiring()->get();
+$subscriptions = App\Subscription::notExpiring()->get();
 ```
 
 ## Testing
