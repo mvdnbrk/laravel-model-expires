@@ -17,4 +17,16 @@ class MigrationTest extends TestCase
 
         $this->assertEquals('datetime', Schema::getColumnType('subscriptions', 'expires_at'));
     }
+
+    /** @test */
+    public function it_can_add_the_expires_at_column_with_a_custom_name()
+    {
+        Schema::create('subscriptions', function (Blueprint $table) {
+            $table->expires('finishes_at');
+        });
+
+        $this->assertEquals([
+            'finishes_at',
+        ], Schema::getColumnListing('subscriptions'));
+    }
 }
