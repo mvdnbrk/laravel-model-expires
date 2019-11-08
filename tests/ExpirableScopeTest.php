@@ -57,4 +57,22 @@ class ExpirableScopeTest extends TestCase
             $this->assertTrue($models->contains($this->expiresInFuture));
         });
     }
+
+    /** @test */
+    public function it_can_retrieve_all_models_expiring_in_the_future()
+    {
+        tap(Subscription::expiring()->get(), function ($models) {
+            $this->assertCount(1, $models);
+            $this->assertTrue($models->contains($this->expiresInFuture));
+        });
+    }
+
+    /** @test */
+    public function it_can_retrieve_all_models_that_will_not_expire_in_the_future()
+    {
+        tap(Subscription::notExpiring()->get(), function ($models) {
+            $this->assertCount(1, $models);
+            $this->assertTrue($models->contains($this->expiresNever));
+        });
+    }
 }
