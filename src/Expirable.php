@@ -71,7 +71,7 @@ trait Expirable
      */
     public function scopeOnlyExpired(Builder $query)
     {
-        return $query->where($this->getExpiresAtColumn(), '<=', $this->freshTimestamp());
+        return $query->where($this->getQualifiedExpiresAtColumn(), '<=', $this->freshTimestamp());
     }
 
     /**
@@ -82,8 +82,9 @@ trait Expirable
      */
     public function scopeExpiring(Builder $query)
     {
-        return $query->whereNotNull($this->getExpiresAtColumn())
-            ->where($this->getExpiresAtColumn(), '>', $this->freshTimestamp());
+        $column = $this->getQualifiedExpiresAtColumn();
+
+        return $query->whereNotNull($column)->where($column, '>', $this->freshTimestamp());
     }
 
     /**
@@ -94,7 +95,7 @@ trait Expirable
      */
     public function scopeNotExpiring(Builder $query)
     {
-        return $query->whereNull($this->getExpiresAtColumn());
+        return $query->whereNull($this->getQualifiedExpiresAtColumn());
     }
 
     /**
@@ -105,8 +106,9 @@ trait Expirable
      */
     public function scopeWithoutExpired(Builder $query)
     {
-        return $query->where($this->getExpiresAtColumn(), '>', $this->freshTimestamp())
-            ->orWhereNull($this->getExpiresAtColumn());
+        $column = $this->getQualifiedExpiresAtColumn();
+
+        return $query->where($column, '>', $this->freshTimestamp())->orWhereNull($column);
     }
 
     /**
