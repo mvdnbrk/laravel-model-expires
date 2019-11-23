@@ -4,6 +4,11 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## [Unreleased]
 
+## [v1.4.1] - 2019-11-23
+
+### Fixed
+- Make macros chainable. [`1dfe8b1`](https://github.com/mvdnbrk/laravel-model-expires/commit/1dfe8b1510dda68e08690e6e7ce40c033a626d33)
+
 ## [v1.4.0] - 2019-11-08
 
 ### Changed
@@ -30,7 +35,8 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## v1.0.0 - 2019-11-07
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.4.1...HEAD
+[v1.4.1]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.4.0...v1.4.1
 [v1.4.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.3.0...v1.4.0
 [v1.3.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.1.0...v1.2.0
