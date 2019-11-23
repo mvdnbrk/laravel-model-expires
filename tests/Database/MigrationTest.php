@@ -3,6 +3,7 @@
 namespace Mvdnbrk\EloquentExpirable\Tests\Database;
 
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\ColumnDefinition;
 use Illuminate\Support\Facades\Schema;
 use Mvdnbrk\EloquentExpirable\Tests\TestCase;
 
@@ -16,6 +17,14 @@ class MigrationTest extends TestCase
         });
 
         $this->assertEquals('datetime', Schema::getColumnType('subscriptions', 'expires_at'));
+    }
+
+    /** @test */
+    public function it_is_chainable()
+    {
+        $table = new Blueprint('subscriptions');
+
+        $this->assertInstanceOf(ColumnDefinition::class, $table->expires());
     }
 
     /** @test */
