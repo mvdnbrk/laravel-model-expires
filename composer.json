@@ -24,10 +24,10 @@
     "require-dev": {
         "doctrine/dbal": "^2.10",
         "nunomaduro/collision": "^3.0",
-        "orchestra/testbench": "^3.8 || ^4.0",
-        "phpunit/phpunit": "^8.0",
+        "orchestra/testbench": "^3.8 || ^4.4",
+        "phpunit/phpunit": "^8.5",
         "scrutinizer/ocular": "^1.6",
-        "symfony/var-dumper": "^4.3"
+        "symfony/var-dumper": "^4.3 || ^5.0"
     },
     "config": {
         "sort-packages": true
