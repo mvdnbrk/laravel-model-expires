@@ -59,7 +59,7 @@ class ExpirableTest extends TestCase
 
         $model = ModelStub::make([
             'expires_at' => Carbon::now()->addYear(),
-         ]);
+        ]);
 
         $this->assertTrue($model->expires_at->equalTo('2020-11-11 11:11:11'));
     }
@@ -71,7 +71,7 @@ class ExpirableTest extends TestCase
 
         $model = ModelStub::make([
             'expires_at' => 60,
-         ]);
+        ]);
 
         $this->assertTrue($model->expires_at->equalTo('2019-11-11 11:12:11'));
     }
@@ -81,7 +81,7 @@ class ExpirableTest extends TestCase
     {
         $model = ModelStub::make([
             'expires_at' => Carbon::now()->subMinute(),
-         ]);
+        ]);
 
         $this->assertNull($model->expires_at);
     }
