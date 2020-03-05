@@ -19,14 +19,13 @@
     ],
     "require": {
         "php": "^7.2",
-        "illuminate/support": "^5.8 || ^6.0"
+        "illuminate/support": "^5.8 || ^6.0 || ^7.0"
     },
     "require-dev": {
         "doctrine/dbal": "^2.10",
-        "nunomaduro/collision": "^3.0",
-        "orchestra/testbench": "^3.8 || ^4.4",
-        "phpunit/phpunit": "^8.5",
-        "scrutinizer/ocular": "^1.6",
+        "nunomaduro/collision": "^3.0 || ^4.1",
+        "orchestra/testbench": "^3.8 || ^4.4 || ^5.0",
+        "phpunit/phpunit": "^8.5 || ^9.0",
         "symfony/var-dumper": "^4.3 || ^5.0"
     },
     "config": {

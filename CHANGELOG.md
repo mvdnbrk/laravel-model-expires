@@ -4,6 +4,9 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- Added support for Laravel 7. [`#18`](https://github.com/mvdnbrk/laravel-model-expires/pull/18)
+
 ## [v1.4.1] - 2019-11-23
 
 ### Fixed
