@@ -15,12 +15,12 @@ class ExpirableServiceProvider extends ServiceProvider
     protected function registerBlueprintMacros(): void
     {
         if ($this->app->runningInConsole()) {
-            Blueprint::macro('expires', function ($column = 'expires_at', $precision = 0) {
+            Blueprint::macro('expires', function (string $column = 'expires_at', int $precision = 0) {
                 /* @var \Illuminate\Database\Schema\Blueprint $this */
                 return $this->timestamp($column, $precision)->nullable();
             });
 
-            Blueprint::macro('dropExpires', function ($column = 'expires_at') {
+            Blueprint::macro('dropExpires', function (string $column = 'expires_at') {
                 /* @var \Illuminate\Database\Schema\Blueprint $this */
                 return $this->dropColumn($column);
             });
