@@ -19,7 +19,7 @@ trait Expirable
      *
      * @return void
      */
-    public static function bootExpirable()
+    public static function bootExpirable(): void
     {
         static::addGlobalScope(new ExpiringScope);
     }
@@ -29,7 +29,7 @@ trait Expirable
      *
      * @return void
      */
-    public function initializeExpirable()
+    public function initializeExpirable(): void
     {
         $this->dates[] = $this->getExpiresAtColumn();
     }
@@ -40,7 +40,7 @@ trait Expirable
      * @param  \DateTimeInterface|\DateInterval|int|null  $ttl
      * @return void
      */
-    public function setExpiresAtAttribute($ttl)
+    public function setExpiresAtAttribute($ttl): void
     {
         $seconds = $this->getSeconds($ttl);
 
@@ -52,7 +52,7 @@ trait Expirable
      *
      * @return bool
      */
-    public function expired()
+    public function expired(): bool
     {
         $expiresAt = $this->{$this->getExpiresAtColumn()};
 
@@ -64,7 +64,7 @@ trait Expirable
      *
      * @return bool
      */
-    public function willExpire()
+    public function willExpire(): bool
     {
         $expiresAt = $this->{$this->getExpiresAtColumn()};
 
@@ -76,7 +76,7 @@ trait Expirable
      *
      * @return string
      */
-    public function getExpiresAtColumn()
+    public function getExpiresAtColumn(): string
     {
         return defined('static::EXPIRES_AT') ? static::EXPIRES_AT : 'expires_at';
     }
@@ -86,7 +86,7 @@ trait Expirable
      *
      * @return string
      */
-    public function getQualifiedExpiresAtColumn()
+    public function getQualifiedExpiresAtColumn(): string
     {
         return $this->qualifyColumn($this->getExpiresAtColumn());
     }
@@ -97,7 +97,7 @@ trait Expirable
      * @param  \DateTimeInterface|\DateInterval|int|null  $ttl
      * @return int
      */
-    protected function getSeconds($ttl)
+    protected function getSeconds($ttl): int
     {
         $duration = $ttl ? $this->parseDateInterval($ttl) : 0;
 

@@ -27,7 +27,7 @@ class ExpiringScope implements Scope
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return void
      */
-    public function apply(Builder $builder, Model $model)
+    public function apply(Builder $builder, Model $model): void
     {
         //
     }
@@ -38,7 +38,7 @@ class ExpiringScope implements Scope
      * @param  \Illuminate\Database\Eloquent\Builder  $builder
      * @return void
      */
-    public function extend(Builder $builder)
+    public function extend(Builder $builder): void
     {
         foreach ($this->extensions as $extension) {
             $this->{"add{$extension}"}($builder);
@@ -51,7 +51,7 @@ class ExpiringScope implements Scope
      * @param  \Illuminate\Database\Eloquent\Builder  $builder
      * @return void
      */
-    protected function addExpiring(Builder $builder)
+    protected function addExpiring(Builder $builder): void
     {
         $builder->macro('expiring', function (Builder $builder) {
             $model = $builder->getModel();
@@ -67,7 +67,7 @@ class ExpiringScope implements Scope
      * @param  \Illuminate\Database\Eloquent\Builder  $builder
      * @return void
      */
-    protected function addNotExpiring(Builder $builder)
+    protected function addNotExpiring(Builder $builder): void
     {
         $builder->macro('notExpiring', function (Builder $builder) {
             return $builder->whereNull($builder->getModel()->getQualifiedExpiresAtColumn());
@@ -80,7 +80,7 @@ class ExpiringScope implements Scope
      * @param  \Illuminate\Database\Eloquent\Builder  $builder
      * @return void
      */
-    protected function addOnlyExpired(Builder $builder)
+    protected function addOnlyExpired(Builder $builder): void
     {
         $builder->macro('onlyExpired', function (Builder $builder) {
             $model = $builder->getModel();
@@ -95,7 +95,7 @@ class ExpiringScope implements Scope
      * @param  \Illuminate\Database\Eloquent\Builder  $builder
      * @return void
      */
-    protected function addWithoutExpired(Builder $builder)
+    protected function addWithoutExpired(Builder $builder): void
     {
         $builder->macro('withoutExpired', function (Builder $builder) {
             $model = $builder->getModel();
