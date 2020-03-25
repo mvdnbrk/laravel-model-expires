@@ -12,7 +12,7 @@ class ExpirableServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerBlueprintMacros();
     }
@@ -22,7 +22,7 @@ class ExpirableServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerBlueprintMacros()
+    protected function registerBlueprintMacros(): void
     {
         if ($this->app->runningInConsole()) {
             Blueprint::macro('expires', function ($column = 'expires_at', $precision = 0) {
