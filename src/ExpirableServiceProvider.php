@@ -7,21 +7,11 @@ use Illuminate\Support\ServiceProvider;
 
 class ExpirableServiceProvider extends ServiceProvider
 {
-    /**
-     * Register the application services.
-     *
-     * @return void
-     */
     public function register(): void
     {
         $this->registerBlueprintMacros();
     }
 
-    /**
-     * Register the blueprint macros.
-     *
-     * @return void
-     */
     protected function registerBlueprintMacros(): void
     {
         if ($this->app->runningInConsole()) {
