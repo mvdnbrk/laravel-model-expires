@@ -25,7 +25,7 @@ trait Expirable
     }
 
     /**
-     * Initialize the expirable trait for an instance.
+     * Initialize the expirable trait for a model.
      *
      * @return void
      */
@@ -35,7 +35,7 @@ trait Expirable
     }
 
     /**
-     * Set the "expires at" column for an instance.
+     * Set the "expires at" column for a model.
      *
      * @param  \DateTimeInterface|\DateInterval|int|null  $ttl
      * @return void
@@ -48,7 +48,7 @@ trait Expirable
     }
 
     /**
-     * Determine if the model instance has expired.
+     * Determine if the model has expired.
      *
      * @return bool
      */
@@ -60,7 +60,7 @@ trait Expirable
     }
 
     /**
-     * Determine if the model instance will expire.
+     * Determine if the model will expire.
      *
      * @return bool
      */
