@@ -26,7 +26,7 @@
         "nunomaduro/collision": "^3.0 || ^4.1",
         "orchestra/testbench": "^3.8 || ^4.4 || ^5.0",
         "phpunit/phpunit": "^8.5 || ^9.0",
-        "symfony/var-dumper": "^4.3 || ^5.0"
+        "symfony/var-dumper": "^4.4 || ^5.0"
     },
     "config": {
         "sort-packages": true
