@@ -4,6 +4,11 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## [Unreleased]
 
+## [v1.5.1] - 2020-03-25
+
+### Added
+- Added type declarations. [`2680c1c`](https://github.com/mvdnbrk/laravel-model-expires/commit/2680c1c665bfd7b0f4fc4a8023f3c5beb503db39), [`c6a6c03`](https://github.com/mvdnbrk/laravel-model-expires/commit/c6a6c0358a5fc6c87ecc138678ea02f80ac84c60), [`ea4b9d3`](https://github.com/mvdnbrk/laravel-model-expires/commit/ea4b9d35f8b643104237e16192fc0a64f6b97505)
+
 ## [v1.5.0] - 2020-03-05
 
 ### Added
@@ -40,7 +45,8 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## v1.0.0 - 2019-11-07
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.5.1...HEAD
+[v1.5.1]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.5.0...v1.5.1
 [v1.5.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.4.1...v1.5.0
 [v1.4.1]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.4.0...v1.4.1
 [v1.4.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.3.0...v1.4.0
