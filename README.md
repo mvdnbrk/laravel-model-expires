@@ -36,14 +36,41 @@ You should add an `expires_at` column to your database table.
 This packages contains a helper method to create this column:
 
 ```php
-Schema::table('subscriptions', function (Blueprint $table) {
-    $table->expires();
-});
+class CreateSubscriptionsTable extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('subscriptions', function (Blueprint $table) {
+            $table->expires();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropExpires();
+    }
+}
+
 ```
 
-> You may drop the `expires_at` column with `$table->dropExpires()`.
-
 The `Expirable` trait will automatically cast the `expires_at` attribute to a `DateTime` / `Carbon` instance for you.
+
+### Customizing the column name
+
+You may customize the column name by setting the `EXIRES_AT` constant or by overriding the `getExpiresAtColumn()` on your model.
+
+```php
+class Subscription extends Model
+{
+    const EXPIRES_AT = 'ends_at';
+    use Expirable;
+}
+```
+
+```php
+$table->expires('ends_at');
+$table->dropExpires('ends_at);
+```
 
 ### Setting expiration
 
