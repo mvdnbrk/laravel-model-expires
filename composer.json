@@ -5,8 +5,10 @@
         "laravel",
         "eloquent",
         "model",
+        "expire",
         "expires",
-        "expiration"
+        "expiration",
+        "expirable"
     ],
     "homepage": "https://github.com/mvdnbrk/laravel-model-expires",
     "license": "MIT",
