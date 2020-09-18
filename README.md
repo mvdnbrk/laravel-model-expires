@@ -57,7 +57,7 @@ The `Expirable` trait will automatically cast the `expires_at` attribute to a `D
 
 ### Customizing the column name
 
-You may customize the column name by setting the `EXIRES_AT` constant or by overriding the `getExpiresAtColumn()` on your model.
+You may customize the column name by setting the `EXIRES_AT` constant or by overriding the `getExpiresAtColumn()` method on your model.
 
 ```php
 class Subscription extends Model
