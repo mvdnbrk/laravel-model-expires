@@ -3,7 +3,7 @@
 ![PHP version][ico-php-version]
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]]
-[![Build Status][ico-travis]][link-travis]
+[![Tests][ico-tests]][link-tests]
 [![Code style][ico-code-style]][link-code-style]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -115,7 +115,7 @@ $subscriptions = App\Subscription::notExpiring()->get();
 
 ## Testing
 
-``` bash
+```bash
 composer test
 ```
 ## Changelog
@@ -142,12 +142,12 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-php-version]: https://img.shields.io/packagist/php-v/mvdnbrk/gtin?style=flat-square
 [ico-version]: https://img.shields.io/packagist/v/mvdnbrk/laravel-model-expires.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-tests]: https://img.shields.io/travis/mvdnbrk/laravel-model-expires/master.svg?style=flat-square
+[ico-tests]: https://img.shields.io/github/workflow/status/mvdnbrk/laravel-model-expires/tests/main?label=tests&style=flat-square
 [ico-code-style]: https://styleci.io/repos/220024174/shield?branch=main
 [ico-downloads]: https://img.shields.io/packagist/dt/mvdnbrk/laravel-model-expires.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/mvdnbrk/laravel-model-expires
-[link-tests]: https://travis-ci.org/mvdnbrk/laravel-model-expires
+[link-tests]: https://github.com/mvdnbrk/laravel-model-expires/actions?query=workflow%3Atests
 [link-code-style]: https://styleci.io/repos/220024174
 [link-downloads]: https://packagist.org/packages/mvdnbrk/laravel-model-expires
 [link-author]: https://github.com/mvdnbrk
