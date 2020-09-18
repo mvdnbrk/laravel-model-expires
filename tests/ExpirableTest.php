@@ -85,7 +85,7 @@ class ExpirableTest extends TestCase
 
         $this->assertNotNull($model->expires_at);
     
-        $model->discardExpiration();
+        $this->assertSame($model, $model->discardExpiration());
 
         $this->assertNull($model->expires_at);
     }
