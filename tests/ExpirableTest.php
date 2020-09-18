@@ -77,11 +77,43 @@ class ExpirableTest extends TestCase
     }
 
     /** @test */
-    public function it_unsets_the_expires_at_column_with_a_date_in_the_past()
+    public function it_can_discard_the_expiration_date()
     {
         $model = ModelStub::make([
-            'expires_at' => Carbon::now()->subMinute(),
+            'expires_at' => 60,
         ]);
+
+        $this->assertNotNull($model->expires_at);
+    
+        $model->discardExpiration();
+
+        $this->assertNull($model->expires_at);
+    }
+
+    /** @test */
+    public function it_discards_the_expiration_date_with_ttl_of_zero()
+    {
+        $model = ModelStub::make([
+            'expires_at' => 60
+        ]);
+
+        $this->assertNotNull($model->expires_at);
+    
+        $model->expires_at = 0;
+
+        $this->assertNull($model->expires_at);
+    }
+
+    /** @test */
+    public function it_discards_the_expiration_date_with_a_date_in_the_past()
+    {
+        $model = ModelStub::make([
+            'expires_at' => 60
+        ]);
+
+        $this->assertNotNull($model->expires_at);
+    
+        $model->expires_at = Carbon::now()->subMinute();
 
         $this->assertNull($model->expires_at);
     }
