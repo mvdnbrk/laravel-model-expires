@@ -8,7 +8,8 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false">
+         stopOnFailure="false"
+>
     <testsuites>
         <testsuite name="Laravel Model Expires Test Suite">
             <directory>tests</directory>
@@ -19,10 +20,4 @@
             <directory suffix=".php">src/</directory>
         </whitelist>
     </filter>
-    <logging>
-        <log type="junit" target="build/report.junit.xml"/>
-        <log type="coverage-html" target="build/coverage"/>
-        <log type="coverage-text" target="build/coverage.txt"/>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
-    </logging>
 </phpunit>
