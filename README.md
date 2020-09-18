@@ -57,7 +57,7 @@ The `Expirable` trait will automatically cast the `expires_at` attribute to a `D
 
 ### Customizing the column name
 
-You may customize the column name by setting the `EXIRES_AT` constant or by overriding the `getExpiresAtColumn()` method on your model.
+You may customize the column name by setting the `EXIRES_AT` constant or by overriding the `getExpiresAtColumn` method on your model.
 
 ```php
 class Subscription extends Model
@@ -86,11 +86,13 @@ Instead of passing the number of seconds as an integer, you may also pass a `Dat
 $subscription->expires_at = now()->addMinutes(10);
 ```
 
-### Removing expiration
+### Discarding expiration
 
-You may remove the expiration of a model by providing a zero or negative TTL:
+You may discard the expiration of a model by using the `discardExpiration` method or by setting a negative or a TTL of `0`:
 
 ```php
+$subscription->discardExpiration();
+
 $subscription->expires_at = 0;
 
 $subscription->expires_at = -5;
