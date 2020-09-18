@@ -62,8 +62,9 @@ You may customize the column name by setting the `EXIRES_AT` constant or by over
 ```php
 class Subscription extends Model
 {
-    const EXPIRES_AT = 'ends_at';
     use Expirable;
+
+    const EXPIRES_AT = 'ends_at';
 }
 ```
 
