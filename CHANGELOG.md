@@ -4,6 +4,11 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## [Unreleased]
 
+## [v1.7.0] - 2020-09-18
+
+### Added
+- Added `discardExpiration` method. [`#22`](https://github.com/mvdnbrk/laravel-model-expires/pull/22), [`#25`](https://github.com/mvdnbrk/laravel-model-expires/pull/25)
+
 ## [v1.6.0] - 2020-08-08
 
 ### Added
@@ -50,7 +55,8 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## v1.0.0 - 2019-11-07
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.6.0...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.7.0...HEAD
+[v1.7.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.6.0...v1.7.0
 [v1.6.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.5.1...v1.6.0
 [v1.5.1]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.5.0...v1.5.1
 [v1.5.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.4.1...v1.5.0
