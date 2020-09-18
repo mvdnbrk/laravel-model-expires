@@ -1,11 +1,10 @@
-# Assign an expiration date to Eloquent models
+# Assign expiration dates to Eloquent models
 
+![PHP version][ico-php-version]
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
+[![Software License][ico-license]]
 [![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![StyleCI][ico-style-ci]][link-style-ci]
+[![Code style][ico-code-style]][link-code-style]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 ## Installation
@@ -140,19 +139,16 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
+[ico-php-version]: https://img.shields.io/packagist/php-v/mvdnbrk/gtin?style=flat-square
 [ico-version]: https://img.shields.io/packagist/v/mvdnbrk/laravel-model-expires.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/mvdnbrk/laravel-model-expires/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/mvdnbrk/laravel-model-expires.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/mvdnbrk/laravel-model-expires.svg?style=flat-square
-[ico-style-ci]: https://styleci.io/repos/220024174/shield?branch=master
+[ico-tests]: https://img.shields.io/travis/mvdnbrk/laravel-model-expires/master.svg?style=flat-square
+[ico-code-style]: https://styleci.io/repos/220024174/shield?branch=main
 [ico-downloads]: https://img.shields.io/packagist/dt/mvdnbrk/laravel-model-expires.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/mvdnbrk/laravel-model-expires
-[link-travis]: https://travis-ci.org/mvdnbrk/laravel-model-expires
-[link-scrutinizer]: https://scrutinizer-ci.com/g/mvdnbrk/laravel-model-expires/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/mvdnbrk/laravel-model-expires
-[link-style-ci]: https://styleci.io/repos/220024174
+[link-tests]: https://travis-ci.org/mvdnbrk/laravel-model-expires
+[link-code-style]: https://styleci.io/repos/220024174
 [link-downloads]: https://packagist.org/packages/mvdnbrk/laravel-model-expires
 [link-author]: https://github.com/mvdnbrk
 [link-contributors]: ../../contributors
