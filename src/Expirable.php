@@ -14,31 +14,18 @@ trait Expirable
 {
     use InteractsWithTime;
 
-    /**
-     * Boot the expirable trait for a model.
-     *
-     * @return void
-     */
     public static function bootExpirable(): void
     {
         static::addGlobalScope(new ExpiringScope);
     }
 
-    /**
-     * Initialize the expirable trait for a model.
-     *
-     * @return void
-     */
     public function initializeExpirable(): void
     {
         $this->dates[] = $this->getExpiresAtColumn();
     }
 
     /**
-     * Set the "expires at" column for a model.
-     *
      * @param  \DateTimeInterface|\DateInterval|int|null  $ttl
-     * @return void
      */
     public function setExpiresAtAttribute($ttl): void
     {
@@ -47,11 +34,6 @@ trait Expirable
         $this->attributes[$this->getExpiresAtColumn()] = $seconds ? Carbon::now()->addSeconds($seconds) : null;
     }
 
-    /**
-     * Determine if the model has expired.
-     *
-     * @return bool
-     */
     public function expired(): bool
     {
         $expiresAt = $this->{$this->getExpiresAtColumn()};
@@ -59,11 +41,6 @@ trait Expirable
         return $expiresAt && $expiresAt->isPast();
     }
 
-    /**
-     * Determine if the model will expire.
-     *
-     * @return bool
-     */
     public function willExpire(): bool
     {
         $expiresAt = $this->{$this->getExpiresAtColumn()};
@@ -71,31 +48,18 @@ trait Expirable
         return $expiresAt && $expiresAt->isFuture();
     }
 
-    /**
-     * Get the name of the "expires at" column.
-     *
-     * @return string
-     */
     public function getExpiresAtColumn(): string
     {
         return defined('static::EXPIRES_AT') ? static::EXPIRES_AT : 'expires_at';
     }
 
-    /**
-     * Get the fully qualified "expires at" column.
-     *
-     * @return string
-     */
     public function getQualifiedExpiresAtColumn(): string
     {
         return $this->qualifyColumn($this->getExpiresAtColumn());
     }
 
     /**
-     * Calculate the number of seconds for the given TTL.
-     *
      * @param  \DateTimeInterface|\DateInterval|int|null  $ttl
-     * @return int
      */
     protected function getSeconds($ttl): int
     {

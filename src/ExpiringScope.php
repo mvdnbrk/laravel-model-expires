@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Scope;
 
 class ExpiringScope implements Scope
 {
-    /**
-     * All of the extensions to be added to the builder.
-     *
-     * @var array
-     */
+    /** @var array */
     protected $extensions = [
         'Expiring',
         'NotExpiring',
@@ -20,24 +16,11 @@ class ExpiringScope implements Scope
         'WithoutExpired',
     ];
 
-    /**
-     * Apply the scope to a given Eloquent query builder.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return void
-     */
     public function apply(Builder $builder, Model $model): void
     {
         //
     }
 
-    /**
-     * Extend the query builder with the needed functions.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @return void
-     */
     public function extend(Builder $builder): void
     {
         foreach ($this->extensions as $extension) {
@@ -45,12 +28,6 @@ class ExpiringScope implements Scope
         }
     }
 
-    /**
-     * Add the "expiring" extension to the builder.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @return void
-     */
     protected function addExpiring(Builder $builder): void
     {
         $builder->macro('expiring', function (Builder $builder) {
@@ -61,12 +38,6 @@ class ExpiringScope implements Scope
         });
     }
 
-    /**
-     * Add the "notExpiring" extension to the builder.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @return void
-     */
     protected function addNotExpiring(Builder $builder): void
     {
         $builder->macro('notExpiring', function (Builder $builder) {
@@ -74,12 +45,6 @@ class ExpiringScope implements Scope
         });
     }
 
-    /**
-     * Add the "onlyExpired" extension to the builder.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @return void
-     */
     protected function addOnlyExpired(Builder $builder): void
     {
         $builder->macro('onlyExpired', function (Builder $builder) {
@@ -89,12 +54,6 @@ class ExpiringScope implements Scope
         });
     }
 
-    /**
-     * Add the "withoutExpired" extension to the builder.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @return void
-     */
     protected function addWithoutExpired(Builder $builder): void
     {
         $builder->macro('withoutExpired', function (Builder $builder) {
