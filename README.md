@@ -1,4 +1,4 @@
-# Assign expiration dates to Eloquent models
+# :hourglass_flowing_sand: Assign expiration dates to Eloquent models
 
 ![PHP version][ico-php-version]
 [![Latest Version on Packagist][ico-version]][link-packagist]
