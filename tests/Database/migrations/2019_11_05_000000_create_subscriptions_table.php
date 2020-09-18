@@ -6,26 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateSubscriptionsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+    public function up(): void
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->expires();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::drop('subscriptions');
     }
 }
