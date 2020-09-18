@@ -16,7 +16,7 @@ composer require mvdnbrk/laravel-model-expires
 ```
 ## Usage
 
-To enable an expiration date for a model, use the `Expirable` trait on your model:
+To use an expiration date on a model, use the `Expirable` trait:
 
 ```php
 <?php
