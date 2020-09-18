@@ -88,14 +88,13 @@ $subscription->expires_at = now()->addMinutes(10);
 
 ### Discarding expiration
 
-You may discard the expiration of a model by using the `discardExpiration` method or by setting a negative or a TTL of `0`:
+You may discard the expiration of a model by setting a negative or zero TTL or use the `discardExpiration` method:
 
 ```php
-$subscription->discardExpiration();
-
 $subscription->expires_at = 0;
-
 $subscription->expires_at = -5;
+
+$subscription->discardExpiration()->save();
 ```
 
 ### Determining expiration

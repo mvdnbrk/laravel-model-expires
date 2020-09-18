@@ -34,9 +34,11 @@ trait Expirable
         $this->attributes[$this->getExpiresAtColumn()] = $seconds ? Carbon::now()->addSeconds($seconds) : null;
     }
 
-    public function discardExpiration(): void
+    public function discardExpiration(): self
     {
         $this->setExpiresAtAttribute(0);
+
+        return $this;
     }
 
     public function expired(): bool
