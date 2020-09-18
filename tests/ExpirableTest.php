@@ -84,7 +84,7 @@ class ExpirableTest extends TestCase
         ]);
 
         $this->assertNotNull($model->expires_at);
-    
+
         $this->assertSame($model, $model->discardExpiration());
 
         $this->assertNull($model->expires_at);
@@ -94,11 +94,11 @@ class ExpirableTest extends TestCase
     public function it_discards_the_expiration_date_with_ttl_of_zero()
     {
         $model = ModelStub::make([
-            'expires_at' => 60
+            'expires_at' => 60,
         ]);
 
         $this->assertNotNull($model->expires_at);
-    
+
         $model->expires_at = 0;
 
         $this->assertNull($model->expires_at);
@@ -108,11 +108,11 @@ class ExpirableTest extends TestCase
     public function it_discards_the_expiration_date_with_a_date_in_the_past()
     {
         $model = ModelStub::make([
-            'expires_at' => 60
+            'expires_at' => 60,
         ]);
 
         $this->assertNotNull($model->expires_at);
-    
+
         $model->expires_at = Carbon::now()->subMinute();
 
         $this->assertNull($model->expires_at);
