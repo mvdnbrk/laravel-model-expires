@@ -142,6 +142,9 @@ The `notExpiring` method will retrieve **only** models that will not expire:
 $subscriptions = App\Models\Subscription::notExpiring()->get();
 ```
 
+### Todo
+- Add a `expired:prune` console command to delete expired models, or perform custom implemention.
+
 ## Testing
 
 ```bash
