@@ -144,7 +144,7 @@ $subscriptions = App\Models\Subscription::notExpiring()->get();
 
 ### Todo
 - Add a `expired:prune` console command to delete expired models, or perform custom implementation.
-- Add a query scope that will query models that wil expire in `...`
+- Add a query scope that will query models that will expire in `...`
 
 ## Testing
 
