@@ -5,6 +5,7 @@
         "laravel",
         "eloquent",
         "model",
+        "date",
         "expire",
         "expires",
         "expiration",
