@@ -21,7 +21,7 @@ To use an expiration date on a model, use the `Expirable` trait:
 ```php
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Mvdnbrk\EloquentExpirable\Expirable;
@@ -121,25 +121,25 @@ if ($subscription->willExpire()) {
 The `withoutExpired` method will retrieve models that are not expired:
 
 ```php
-$subscriptions = App\Subscription::withoutExpired()->get();
+$subscriptions = App\Models\Subscription::withoutExpired()->get();
 ```
 
 The `onlyExpired` method will retrieve **only** the expired models:
 
 ```php
-$subscriptions = App\Subscription::onlyExpired()->get();
+$subscriptions = App\Models\Subscription::onlyExpired()->get();
 ```
 
 The `expiring` method will retrieve **only** models that will expire in the future:
 
 ```php
-$subscriptions = App\Subscription::expiring()->get();
+$subscriptions = App\Models\Subscription::expiring()->get();
 ```
 
 The `notExpiring` method will retrieve **only** models that will never expire:
 
 ```php
-$subscriptions = App\Subscription::notExpiring()->get();
+$subscriptions = App\Models\Subscription::notExpiring()->get();
 ```
 
 ## Testing
