@@ -136,7 +136,7 @@ The `expiring` method will retrieve **only** models that will expire in the futu
 $subscriptions = App\Models\Subscription::expiring()->get();
 ```
 
-The `notExpiring` method will retrieve **only** models that will never expire:
+The `notExpiring` method will retrieve **only** models that will not expire:
 
 ```php
 $subscriptions = App\Models\Subscription::notExpiring()->get();
