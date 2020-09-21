@@ -10,7 +10,7 @@
         "expiration",
         "expirable"
     ],
-    "homepage": "https://github.com/mvdnbrk/laravel-expirable",
+    "homepage": "https://github.com/mvdnbrk/laravel-model-expires",
     "license": "MIT",
     "authors": [
         {
