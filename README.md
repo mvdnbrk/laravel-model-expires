@@ -143,7 +143,7 @@ $subscriptions = App\Models\Subscription::notExpiring()->get();
 ```
 
 ### Todo
-- Add a `expired:prune` console command to delete expired models, or perform custom implemention.
+- Add a `expired:prune` console command to delete expired models, or perform custom implementation.
 
 ## Testing
 
