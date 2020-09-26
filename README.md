@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/mvdnbrk/laravel-model-expires/main/docs/logo.png" alt="Laravel Model Expires">
 
-# Assign expiration dates to Eloquent models
+---
 
 ![PHP version][ico-php-version]
 [![Latest Version on Packagist][ico-version]][link-packagist]
@@ -8,6 +8,8 @@
 [![Tests][ico-tests]][link-tests]
 [![Code style][ico-code-style]][link-code-style]
 [![Total Downloads][ico-downloads]][link-downloads]
+
+# Assign expiration dates to Eloquent models
 
 ## Installation
 
