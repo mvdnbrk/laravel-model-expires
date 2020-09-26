@@ -1,9 +1,6 @@
 .DS_Store
-build
+.phpunit.result.cache
 composer.lock
-docs
 vendor
 coverage
 phpunit.xml
-.phpunit.result.cache
-.idea
