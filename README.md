@@ -1,4 +1,4 @@
-<img src="https://repository-images.githubusercontent.com/220024174/d4c46d00-fff3-11ea-847b-73dc0f3ed9bb">
+<img src="https://raw.githubusercontent.com/mvdnbrk/laravel-model-expires/main/docs/logo.png" alt="Laravel Model Expires">
 
 # Assign expiration dates to Eloquent models
 
