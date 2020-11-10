@@ -4,6 +4,9 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## [Unreleased]
 
+### Removed
+- Removed support for Laravel 5.5. [`28`](https://github.com/mvdnbrk/laravel-model-expires/pull/28)
+
 ## [v1.7.0] - 2020-09-18
 
 ### Added
