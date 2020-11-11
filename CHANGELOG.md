@@ -4,6 +4,11 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## [Unreleased]
 
+## [v1.8.1] - 2020-11-11
+
+### Fixed
+- Support for PHP 8.
+
 ## [v1.8.0] - 2020-11-10
 
 ### Added
@@ -63,7 +68,8 @@ All notable changes to `laravel-model-expires` will be documented in this file.
 
 ## v1.0.0 - 2019-11-07
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.8.0...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.8.1...HEAD
+[v1.8.1]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.8.0...v1.8.1
 [v1.8.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.7.0...v1.8.0
 [v1.7.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.6.0...v1.7.0
 [v1.6.0]: https://github.com/mvdnbrk/laravel-model-expires/compare/v1.5.1...v1.6.0
