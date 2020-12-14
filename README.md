@@ -176,7 +176,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-php-version]: https://img.shields.io/packagist/php-v/mvdnbrk/gtin?style=flat-square
+[ico-php-version]: https://img.shields.io/packagist/php-v/mvdnbrk/laravel-model-expires?style=flat-square
 [ico-version]: https://img.shields.io/packagist/v/mvdnbrk/laravel-model-expires.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-tests]: https://img.shields.io/github/workflow/status/mvdnbrk/laravel-model-expires/tests/main?label=tests&style=flat-square
