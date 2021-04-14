@@ -18,6 +18,13 @@ You can install the package via composer:
 ```bash
 composer require mvdnbrk/laravel-model-expires
 ```
+
+Once installed the configuration file can be published by typing:
+
+```bash
+php artisan vendor:publish --provider="Mvdnbrk\EloquentExpirable\ExpirableServiceProvider"
+```
+
 ## Usage
 
 To use an expiration date on a model, use the `Expirable` trait:
@@ -146,8 +153,29 @@ The `notExpiring` method will retrieve **only** models that will not expire:
 $subscriptions = App\Models\Subscription::notExpiring()->get();
 ```
 
+### Purging Records
+A CLI command to purge expired records has been provided for convenience.
+
+To make use of this feature edit the configuration file in configs/expirable.php and set the `purge` array to the class of the desired model.  When doing so be sure to include the 'Expirable' trait as per the example above otherwise the command will output an error.
+
+```php
+    'purge' => [
+        \App\Models\Subscription::class,
+    ],
+```
+
+To run the command simply execute `php artisan expirable:purge`  and you should see output similar to the following:
+
+```bash
+Deleting expired records...
+
+App\Models\Subscription: 
+11 records deleted.
+
+Purge completed!
+```
+
 ### Todo
-- Add a `expired:prune` console command to delete expired models, or perform custom implementation.
 - Add a query scope that will query models that will expire in `...`
 
 ## Testing
