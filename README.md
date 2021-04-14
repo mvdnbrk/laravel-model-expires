@@ -18,6 +18,13 @@ You can install the package via composer:
 ```bash
 composer require mvdnbrk/laravel-model-expires
 ```
+
+Once installed the configuration file can be published by typing:
+
+```bash
+php artisan vendor:publish --provider="Mvdnbrk\EloquentExpirable\ExpirableServiceProvider"
+```
+
 ## Usage
 
 To use an expiration date on a model, use the `Expirable` trait:
