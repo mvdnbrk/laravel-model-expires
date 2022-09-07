@@ -74,7 +74,7 @@ class Subscription extends Model
 
 ```php
 $table->expires('ends_at');
-$table->dropExpires('ends_at);
+$table->dropExpires('ends_at');
 ```
 
 ### Setting expiration
